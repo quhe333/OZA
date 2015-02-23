@@ -53,7 +53,7 @@ public class CombatController2 : MonoBehaviour {
 	float specialAttackValue = 0; //On a per-special basis, this controls how many times a combo runs when activated.
 	
 	// For visual manipulation
-	public Animator anim;
+	public Animator auraAnim;
 	public Light auraLight;
 	
 	
@@ -66,14 +66,14 @@ public class CombatController2 : MonoBehaviour {
 	void Update () {
 		
 		////// AURA STUFF //////
-		/*
-		anim.SetFloat ("SongValue", songValue); //Aura definition. Governs when it should animate.
+
+		auraAnim.SetBool ("IsPlaying", (!songValue.Equals (""))); //Aura definition. Governs when it should animate.
 		
-		if (songValue >= 1)  //If aura exists, light will shine
-			auraLight.enabled = true;
-		else
+		if (songValue.Equals (""))  //If aura exists, light will shine
 			auraLight.enabled = false;
-		*/
+		else
+			auraLight.enabled = true;
+
 		
 		////// NOTE PLAYING //////
 		
@@ -174,20 +174,21 @@ public class CombatController2 : MonoBehaviour {
 			FireMd();
 			specialAttackValue++;
 		}
-		if (specialAttackValue == 1 && songValue.Equals("6545666555"))  //Mary Had a Little Lamb 2
+		if (specialAttackValue == 1 && songValue.Equals("6545666"+"555"))  //Mary Had a Little Lamb 2
 		{  
 			FireMd();
 			specialAttackValue++;
 		}
-		if (specialAttackValue == 2 && songValue.Equals("6545666555688"))  //Mary Had a Little Lamb 3
+		if (specialAttackValue == 2 && songValue.Equals("6545666"+"555"+"688"))  //Mary Had a Little Lamb 3
 		{  
 			FireMd();
 			specialAttackValue++;
 		}
-		if (specialAttackValue == 3 && songValue.Equals("65456665556886545666655654"))  //Mary Had a Little Lamb 4
+		if (specialAttackValue == 3 && songValue.Equals("6545666"+"555"+"688"+"6545666655654"))  //Mary Had a Little Lamb 4
 		{  
 			FireMd();
 			specialAttackValue = 0;
+			songValue = "";
 		}
 		
 	}
