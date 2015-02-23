@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CharacterKontroller.cs" />
      <Compile Include="Assets\Scripts\CombatController.cs" />
+     <Compile Include="Assets\Scripts\CombatController2.cs" />
      <Compile Include="Assets\Scripts\Ladder.cs" />
      <Compile Include="Assets\Scripts\MusicMenuScript.cs" />
      <Compile Include="Assets\Scripts\NoteDestruction.cs" />
